@@ -16,4 +16,6 @@ router.get('/dummy',(req,res)=>{
     })
 })
 
+router.get('/isAdmin',AuthReqValidator.validateIsAdminReq,UserController.isAdmin)
+
 module.exports=router

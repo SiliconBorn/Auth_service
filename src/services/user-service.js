@@ -97,7 +97,15 @@ class UserService{
         }
       }
 
-  
+     isAdmin(userId){
+      try {
+        return this.userRepository.isAdmin(userId)
+      } catch (error) {
+        console.log('something went wrong while password verification from user-service layer :' + error);
+            throw error;
+      }
+
+    }
 }
 
 

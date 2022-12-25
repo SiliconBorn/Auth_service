@@ -16,6 +16,22 @@ const validateUserAuth = (req,res,next)=>{
 }
 
 
+const  validateIsAdminReq=(req,res,next)=>{
+
+  if(!req.body.id){
+    return res.status(400).json({
+      message:"User ID is required ",
+      success:false,
+      data:{},
+      err:'Missing data from user inputs'
+  
+     })
+  }
+
+  next()
+}
+
+
 
 
 
@@ -26,5 +42,6 @@ const validateUserAuth = (req,res,next)=>{
 
 
 module.exports={
-    validateUserAuth
+    validateUserAuth,
+    validateIsAdminReq
 }
